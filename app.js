@@ -19,7 +19,7 @@ var commentRoutes    = require("./routes/comments"),
 var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp"
 mongoose.connect(url, { useNewUrlParser: true, useFindAndModify: false });
 // mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true, useFindAndModify: false });
-// mongoose.connect("mongodb+srv://EdWilgosz:Eddie0505@cluster0-jvpcl.mongodb.net/yelp_camp?retryWrites=true&w=majority", { useNewUrlParser: true, useFindAndModify: false });
+// mongoose.connect("mongodb+srv://<username>:<password>@cluster0-jvpcl.mongodb.net/yelp_camp?retryWrites=true&w=majority", { useNewUrlParser: true, useFindAndModify: false });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -29,7 +29,7 @@ app.use(flash());
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-    secret: "Once again Suhki wins cutest dog!",
+    secret: <secret>,
     resave: false,
     saveUninitialized: false
 }));
